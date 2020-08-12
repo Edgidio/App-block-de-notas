@@ -7,6 +7,7 @@
     <title>Block de notas</title>
 
     <link rel="shortcut icon" href="/IMG/CIBERTYX-Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 
 </head>
@@ -15,7 +16,22 @@
     <!-- Menu de navegacion -->
     <%- include('layouts/menu-de-navegacion') %>
 
-    <div class="container">
+    <div class="container mt-5">
+
+        <div class="jumbotron">
+            <h1 class="display-4">App-block de notas</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <br>
+            <p class="lead">
+                <%if (notas.length === 0) {%>
+                    <a class="btn-lg btn btn-dark" href="/add-nueva-nota">Guardar notas</a>
+                <% } else { %>
+                    <a class="btn-lg btn btn-dark" href="/all-notas">Ver notas</a>
+                <% } %>
+            </p>
+          </div>
 
     </div>
 

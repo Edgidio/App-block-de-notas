@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Todas las notas</title>
+
+    <link rel="shortcut icon" href="/IMG/CIBERTYX-Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+</head>
+<body class="bg-warning">
+
+    <!-- Menu de navegacion -->
+    <%- include('layouts/menu-de-navegacion') %>
+
+    <div class="container mt-5">
+
+        <div class="jumbotron">
+
+            <h1 class="display-4">All notas</h1>
+            
+            <div class="container">
+
+                  <% notas.forEach(function (nota) { %>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title"><%= nota.Titulo %></h5>
+                            <p class="card-text"><%= nota.Descripcion %></p>
+                          </div>
+                          <br>
+                        </div>
+                      </div>
+                    </div>
+
+                  <% }) %>
+
+            </div>
+
+            <br>
+            <p class="lead">
+              <a class="btn btn-dark btn-lg" href="/add-nueva-nota" role="button">Add mas nota</a>
+            </p>
+          </div>
+
+    </div>
+
+    <script src="/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/popper.js/js/popper.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

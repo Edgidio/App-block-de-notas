@@ -1,8 +1,8 @@
-const { render } = require("ejs");
+const {notas} = require('../controllers/POST_add_nueva_nota');
 
 const all_notas = (req, res)=>{
 
-    res.render('index');
+    res.render('all-notas', {notas});
     
 };
 

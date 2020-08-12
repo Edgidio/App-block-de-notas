@@ -5,8 +5,8 @@ const Routes = Router();
 -------------------------------------------------- */
 const index = require('../controllers/index');
 const add_nueva_nota = require('../controllers/add_nueva_nota');
-const POST_add_nueva_nota = require('../controllers/POST_add_nueva_nota');
-const all_notas = require('../controllers/add_nueva_nota');
+const {POST_add_nueva_nota} = require('../controllers/POST_add_nueva_nota');
+const all_notas = require('../controllers/all_notas');
 
 /* ROUTES
 -------------------------------------------------- */

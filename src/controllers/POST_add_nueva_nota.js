@@ -1,5 +1,22 @@
+let notas = [];
+
 const POST_add_nueva_nota = (req, res)=>{
-    res.render('index')
+
+    let body = req.body
+
+    let nuevaNota = {
+        Titulo: body.Titulo,
+        Descripcion: body.Descripcion
+    };
+
+    notas.push(nuevaNota);
+
+    res.redirect('/all-notas')
 };
 
-module.exports = POST_add_nueva_nota;
+module.exports = {
+    notas,
+    POST_add_nueva_nota
+}
+
+

@@ -1,6 +1,8 @@
-const index = (req, res)=>{
+const { notas } = require('../controllers/POST_add_nueva_nota');
 
-    res.render('index.ejs');
+const index = (req, res)=>{
+    console.log('NOTAS', notas.length)
+    res.render('index.ejs', {notas});
     
 };
 
