@@ -7,6 +7,8 @@ const path = require('path');
 /* MODULOS NPM
 ------------------------------------------------- */
 const morgan = require('morgan');
+const session = require('express-session');
+const flash = require('connect-flash');
 
 /* CONFIGURACIONES
 ------------------------------------------------- */
@@ -19,7 +21,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(morgan('dev'));
 app.use( express.urlencoded({extended:false}))
 app.use(express.static(path.join(__dirname,'public')));
-app.use(express.json())
+app.use(express.json());
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+}))
+
+app.use(flash());
+
 
 /* ROUTES
 ------------------------------------------------- */

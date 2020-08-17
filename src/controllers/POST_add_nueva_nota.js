@@ -11,7 +11,9 @@ const POST_add_nueva_nota = (req, res)=>{
 
     notas.push(nuevaNota);
 
-    res.redirect('/all-notas')
+    req.flash('info', ' Nota agregada satisfactoriamente')
+
+    res.redirect('/all-notas');
 };
 
 module.exports = {
